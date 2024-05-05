@@ -1,9 +1,12 @@
 import "./App.css";
+import DictPage from "./components/DictPage";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <h1>My Dictionary</h1>
+      <Header />
+      <DictPage />
     </>
   );
 }

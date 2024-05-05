@@ -4,3 +4,22 @@
   padding: 2rem;
   text-align: center;
 }
+header {
+  border: 2px solid green;
+  margin: 1em;
+}
+
+.dict-page {
+  border: 2px solid gray;
+  margin: 1em;
+}
+
+.search-bar {
+  border: 1px dotted palevioletred;
+  margin: 1em;
+}
+
+.display-word {
+  border: 1px dotted blueviolet;
+  margin: 1em;
+}
