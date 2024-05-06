@@ -8,16 +8,17 @@ function DisplayWord({ searchTerm }) {
       (response) => response.json().then((data) => setOutput(data[0]))
     );
   }, [searchTerm]);
-
 console.log(output)
 
-  return (
+  return Object.keys(output).length === 0 ? (
+    <p>No results found</p>
+  ) : (
     <section className="display-word">
       <p>Displaying results for: {output.word}</p>
       <p>Phonetic: {output.phonetic}</p>
       <p>Part of Speech: {output.meanings[0].partOfSpeech}</p>
-      <p>Definition: {output.meanings[0].definitions[0].definition}</p>
-      {/* <p>Examples: {output.meanings[0].definitions[0].example}</p> */}
+      <p>Definition: {output.meanings[0].definitions[0].definition}</p> 
+      <p>Examples: {output.meanings[0].definitions[0].example}</p>
     </section>
   );
 }
