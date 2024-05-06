@@ -3,16 +3,14 @@ import DisplayWord from "./DisplayWord";
 import SearchBar from "./SearchBar";
 
 function DictPage() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  console.log("the search term is: ", searchTerm);
+  const [searchTerm, setSearchTerm] = useState("meander");
 
   return (
     <>
       <main className="dict-page">
         <div>DictPage here</div>
         <SearchBar setSearchTerm={setSearchTerm} />
-        <DisplayWord />
+        <DisplayWord searchTerm={searchTerm} />
       </main>
     </>
   );
