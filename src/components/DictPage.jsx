@@ -3,7 +3,7 @@ import DisplayWord from "./DisplayWord";
 import SearchBar from "./SearchBar";
 
 function DictPage() {
-  const [searchTerm, setSearchTerm] = useState("meander");
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <>
