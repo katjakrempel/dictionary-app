@@ -5,14 +5,12 @@ import SearchBar from "./SearchBar";
 function DictPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  console.log("the search term is: ", searchTerm);
-
   return (
     <>
       <main className="dict-page">
         <div>DictPage here</div>
         <SearchBar setSearchTerm={setSearchTerm} />
-        <DisplayWord />
+        <DisplayWord searchTerm={searchTerm} />
       </main>
     </>
   );
