@@ -1,5 +1,5 @@
 function Header() {
-  return <header>Header here</header>;
+  return <header>My Dictionary</header>;
 }
 
 export default Header;
