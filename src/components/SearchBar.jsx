@@ -1,3 +1,6 @@
+import SearchIcon from "@mui/icons-material/Search";
+import IconButton from "@mui/material/IconButton";
+
 import { useState } from "react";
 function SearchBar({ setSearchTerm }) {
   const [newSearchTerm, setNewSearchTerm] = useState("");
@@ -9,15 +12,23 @@ function SearchBar({ setSearchTerm }) {
   }
 
   return (
-    <section className="search-bar">
+    <section className="search">
       <form onSubmit={handleSubmit}>
         <label>
           <input
+            className="search-bar"
             value={newSearchTerm}
             onChange={(event) => setNewSearchTerm(event.target.value)}
           />
         </label>
-        <button type="submit">Search</button>
+        <IconButton
+          color="success"
+          size="medium"
+          type="submit"
+          sx={{ bgcolor: "background.paper", boxShadow: 2, borderRadius: 3 }}
+        >
+          <SearchIcon />
+        </IconButton>
       </form>
     </section>
   );

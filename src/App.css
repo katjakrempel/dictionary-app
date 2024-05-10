@@ -1,5 +1,5 @@
 #root {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -10,26 +10,35 @@ header {
   font-size: x-large;
   font-weight: bold;
   color: green;
-  border: 2px dotted green;
+  /* border: 2px dotted green; */
   margin: 20px;
-  padding: 1em;
-  background-image: url('assets/header-background.png'); 
+  padding: 1.5em;
+  background-image: url("assets/header-background.png");
 }
 
 .dict-page {
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
   margin: 1em;
+}
+
+.search {
+  /* border: 1px solid palevioletred; */
+  width: 100%;
+  margin: 2em;
 }
 
 .search-bar {
-  border: 1px dotted palevioletred;
+  border: 2px solid grey;
+  border-radius: 5px;
+  width: 40%;
+  height: 25px;
   margin: 1em;
+  padding: 5px;
 }
 
 .display-results {
-  border: 1px dotted blueviolet;
+  /* border: 1px dotted blueviolet; */
   margin: 1em;
-
 }
 
 .display-results ol {
