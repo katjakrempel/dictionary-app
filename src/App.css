@@ -10,15 +10,14 @@ header {
   font-size: x-large;
   font-weight: bold;
   color: green;
-  /* border: 2px dotted green; */
   margin: 20px;
   padding: 1.5em;
   background-image: url("assets/header-background.png");
 }
 
 .dict-page {
-  /* border: 2px solid gray; */
   margin: 1em;
+  padding-top: 2em;
 }
 
 .search {
@@ -37,8 +36,8 @@ header {
 }
 
 .display-results {
-  /* border: 1px dotted blueviolet; */
-  margin: 1em;
+  width: 100%;
+  margin: 2em;
 }
 
 .display-results ol {

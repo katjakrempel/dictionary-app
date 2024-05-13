@@ -17,7 +17,7 @@ function DisplayWord({ searchTerm }) {
   }, []);
 
   return Object.keys(output).length === 0 || isFirstRender.current ? (
-    <p>No results found</p>
+    <p></p>
   ) : (
     <section className="display-results">
       <p>Displaying search results for:</p>
