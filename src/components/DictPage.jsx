@@ -8,7 +8,7 @@ function DictPage() {
   return (
     <>
       <main className="dict-page">
-        <div>Which word would you like to look up?</div>
+        <div>What word would you like to look up?</div>
         <SearchBar setSearchTerm={setSearchTerm} />
         <DisplayWord searchTerm={searchTerm} />
       </main>

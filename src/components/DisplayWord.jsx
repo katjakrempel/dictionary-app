@@ -2,19 +2,30 @@ import { useEffect, useRef, useState } from "react";
 
 function DisplayWord({ searchTerm }) {
   const [output, setOutput] = useState({});
+  const [error, setError] = useState(null);
   const isFirstRender = useRef(true);
-  console.log(output);
+
   useEffect(() => {
     if (!isFirstRender.current) {
       fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`)
         .then((response) => response.json())
-        .then((data) => setOutput(data[0]));
+        .then((data) => {
+          if (!data[0]) {
+            throw new Error("Sorry, no results found.");
+          }
+          setOutput(data[0]);
+        })
+        .catch((error) => {
+          setError(error);
+        });
     }
   }, [searchTerm]);
 
   useEffect(() => {
     isFirstRender.current = false;
   }, []);
+
+  if (error) return <p>{error.message}</p>;
 
   return Object.keys(output).length === 0 || isFirstRender.current ? (
     <p></p>
@@ -23,10 +34,13 @@ function DisplayWord({ searchTerm }) {
       <p>Displaying search results for:</p>
       <h2>{output.word}</h2>
       <p>{output.phonetic}</p>
-      <audio controls src={output.phonetics[0].audio}>
-        Your browser does not support the audio element
-      </audio>
-
+      {output.phonetics.length === 0 ? (
+        <p>Phonetics not available</p>
+      ) : (
+        <audio controls src={output.phonetics[0].audio}>
+          Your browser does not support the audio element
+        </audio>
+      )}
       <ol>
         {output.meanings.map((meaning) => {
           return (
