@@ -17,16 +17,23 @@ function DisplayWord({ searchTerm }) {
   }, []);
 
   return Object.keys(output).length === 0 || isFirstRender.current ? (
-    <p>No results found</p>
+    <p></p>
   ) : (
     <section className="display-results">
       <p>Displaying search results for:</p>
       <h2>{output.word}</h2>
-      <p>Phonetic: {output.phonetic}</p>
+      <p>{output.phonetic}</p>
+      <audio controls src={output.phonetics[0].audio}>
+        Your browser does not support the audio element
+      </audio>
+
       <ol>
         {output.meanings.map((meaning) => {
           return (
-            <li className="word-definition" key={meaning.definitions[0].definition}>
+            <li
+              className="word-definition"
+              key={meaning.definitions[0].definition}
+            >
               <h3>{meaning.partOfSpeech}</h3>
               <p>Definition:</p>
               <p>{meaning.definitions[0].definition}</p>
