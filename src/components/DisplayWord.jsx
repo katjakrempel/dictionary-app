@@ -11,7 +11,7 @@ function DisplayWord({ searchTerm }) {
         .then((response) => response.json())
         .then((data) => {
           if (!data[0]) {
-            throw new Error("No results found");
+            throw new Error("Sorry, no results found.");
           }
           setOutput(data[0]);
         })
