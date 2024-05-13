@@ -16,7 +16,7 @@ function SearchBar({ setSearchTerm }) {
       <form onSubmit={handleSubmit}>
         <label>
           <input
-            className="search-bar"
+            id="search-bar"
             value={newSearchTerm}
             onChange={(event) => setNewSearchTerm(event.target.value)}
           />
