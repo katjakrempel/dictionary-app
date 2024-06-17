@@ -4,7 +4,7 @@ function DisplayWord({ searchTerm }) {
   const [output, setOutput] = useState({});
   const [error, setError] = useState(null);
   const isFirstRender = useRef(true);
-
+  console.log(output)
   useEffect(() => {
     if (!isFirstRender.current) {
       fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`)
@@ -49,10 +49,9 @@ function DisplayWord({ searchTerm }) {
               key={meaning.definitions[0].definition}
             >
               <h3>{meaning.partOfSpeech}</h3>
-              <p>Definition:</p>
-              <p>{meaning.definitions[0].definition}</p>
-              <p>Example:</p>
-              <p>{meaning.definitions[0].example}</p>
+              <p>Definition: {meaning.definitions[0].definition}</p>
+              <p>Synonyms: {meaning.synonyms.join(", ")}</p>
+              <p>Example: {meaning.definitions[0].example}</p>
             </li>
           );
         })}
