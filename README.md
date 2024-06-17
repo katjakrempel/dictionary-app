@@ -4,12 +4,12 @@
 
 This is a single-page application built with React which allows users to look up word definitions, as well as pronunciation and example sentences. 
 
-The app uses the [Free Dictionary API]() to retrieve word information.
+The app uses the [Free Dictionary API](https://dictionaryapi.dev/) to retrieve word information.
 
 
 ## Links
 
-Please have a look at the hosted version of the dictionary on Netlify: [https://mydictionary-en.netlify.app](https://mydictionary-en.netlify.app)
+Please have a look at the hosted version of the dictionary on Netlify: [https://mydictionary-en.netlify.app](https://mydictionary-en.netlify.app/)
 
 
 ## Setup
