@@ -4,7 +4,7 @@ function DisplayWord({ searchTerm }) {
   const [output, setOutput] = useState({});
   const [error, setError] = useState(null);
   const isFirstRender = useRef(true);
-  console.log(output)
+  
   useEffect(() => {
     if (!isFirstRender.current) {
       fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`)
